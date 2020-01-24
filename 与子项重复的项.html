@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // var str = "113";
+    // // var re = /(\d)\d/;
+    // var re = /(\d)\1/;
+    // console.log(re.test(str));
+
+    var str = "aaaaa111112222ddddda";
+    var re = /(\w)\1+/g;
+    str = str.replace(re,function ($0,$1){
+        return $1;
+    })
+    console.log(str);
+    </script>
+</body>
+</html>

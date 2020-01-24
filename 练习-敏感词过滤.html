@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>敏感词过滤</title>
+</head>
+<body>
+    <input type="text">
+    <button>输出</button>
+    <br>
+    <input type="text">
+    <button>设置</button>
+    <p></p>
+    <script>
+        var aTe = document.querySelectorAll("input");
+        var aBtn = document.querySelectorAll("button");
+        var oP = document.querySelector("p");
+        var re =/a/;
+        aBtn[1].onclick = function(){
+            //  re =/aTe[1].value+/g;
+             re = new RegExp(aTe[1].value,"g");
+        }
+       
+        aBtn[0].onclick = function(){
+            oP.innerHTML = (aTe[0].value).replace(re,function($0){
+                  return  new Array($0.length+1).join("*");
+            });
+        }
+    </script>
+</body>
+</html>
